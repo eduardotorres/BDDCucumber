@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Runner" project="BDDCucumber" tests="9" started="9" failures="0" errors="0" ignored="4">
+  <testsuite name="Runner" time="0.061">
+    <testsuite name="Feature: Learn Cucumber" time="0.061">
+      <testsuite name="Scenario: Should execute specification" time="0.0">
+        <testcase name="Given that I created the file correctly" classname="Scenario: Should execute specification" time="0.0"/>
+        <testcase name="When I execute" classname="Scenario: Should execute specification" time="0.0"/>
+        <testcase name="Then the specification should finalize with success" classname="Scenario: Should execute specification" time="0.0"/>
+      </testsuite>
+      <testsuite name="Scenario: Should calculate delay in delivery" time="0.001" incomplete="true">
+        <skipped/>
+        <testcase name="Given that the deadline is 29/08/2020" classname="Scenario: Should calculate delay in delivery" time="0.0"/>
+        <testcase name="When the delivery is delayed in 2 days" classname="Scenario: Should calculate delay in delivery" time="0.0" ignored="true"/>
+        <testcase name="Then the delivery will be in 31/08/2020" classname="Scenario: Should calculate delay in delivery" time="0.0" ignored="true"/>
+      </testsuite>
+      <testsuite name="Scenario: Should calculate delay in delivery in China" time="0.0" incomplete="true">
+        <skipped/>
+        <testcase name="Given that the deadline is 29/08/2020" classname="Scenario: Should calculate delay in delivery in China" time="0.0"/>
+        <testcase name="When the delivery is delayed in 2 months" classname="Scenario: Should calculate delay in delivery in China" time="0.0" ignored="true"/>
+        <testcase name="Then the delivery will be in 29/10/2020" classname="Scenario: Should calculate delay in delivery in China" time="0.0" ignored="true"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testrun>

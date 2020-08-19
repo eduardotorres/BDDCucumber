@@ -1,5 +1,9 @@
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+
+import org.junit.Assert;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -28,22 +32,30 @@ public class Automation {
 	public void that_the_deadline_is(int day, int month, int year) throws Throwable {
 		Calendar cal = Calendar.getInstance();
 		cal.set(Calendar.DAY_OF_MONTH, day);
-		cal.set(Calendar.MONTH, month);
+		cal.set(Calendar.MONTH, month - 1);
 		cal.set(Calendar.YEAR, year);
 		delivery = cal.getTime();
 	}
 
-	@When("^the delivery is delayed in (\\d+) days$")
-	public void the_delivery_is_delayed_in_days(int arg1) throws Throwable {
+	@When("^the delivery is delayed in (\\d+) (day|days|month|months)$")
+	public void the_delivery_is_delayed_in_days(int arg1, String time) throws Throwable {
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(delivery);
-		cal.add(Calendar.DAY_OF_MONTH, arg1);
+		if (time.equals("days")) {
+			cal.add(Calendar.DAY_OF_MONTH, arg1);
+		}
+		if (time.equals("months")) {
+			cal.add(Calendar.MONTH, arg1);
+		}
 		delivery = cal.getTime();
 	}
 
-	@Then("^the delivery will be in (\\d+)/(\\d+)/(\\d+)$")
-	public void the_delivery_will_be_in(int arg1, int arg2, int arg3) throws Throwable {
-
+	@Then("^the delivery will be in (\\d{2}\\/\\d{2}\\/\\d{4})$")
+	public void the_delivery_will_be_in(String date) throws Throwable {
+		
+			DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+			String dateFormated = format.format(delivery);
+			Assert.assertEquals(date, dateFormated);
 	}
 
 }
