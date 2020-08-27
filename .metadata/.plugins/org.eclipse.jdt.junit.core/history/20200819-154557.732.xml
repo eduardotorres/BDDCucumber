@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Runner" project="BDDCucumber" tests="6" started="6" failures="2" errors="0" ignored="0">
+  <testsuite name="Runner" time="0.02">
+    <testsuite name="Feature: Learn Cucumber" time="0.02">
+      <testsuite name="Scenario: Should execute specification" time="0.001">
+        <testcase name="Given that I created the file correctly" classname="Scenario: Should execute specification" time="0.001"/>
+        <testcase name="When I execute" classname="Scenario: Should execute specification" time="0.0"/>
+        <testcase name="Then the specification should finalize with success" classname="Scenario: Should execute specification" time="0.0"/>
+      </testsuite>
+      <testsuite name="Scenario: Should calculate delay in delivery" time="0.001" incomplete="true">
+        <failure>
+          <expected>31/08/2020</expected>
+          <actual>01/10/2020</actual>org.junit.ComparisonFailure: expected:&lt;[31/08]/2020&gt; but was:&lt;[01/10]/2020&gt;&#13;
+	at org.junit.Assert.assertEquals(Assert.java:115)&#13;
+	at org.junit.Assert.assertEquals(Assert.java:144)&#13;
+	at Automation.the_delivery_will_be_in(Automation.java:53)&#13;
+	at ✽.Then the delivery will be in 31/08/2020(cucumber.feature:16)&#13;
+&#13;
+</failure>
+        <testcase name="Given that the deadline is 29/08/2020" classname="Scenario: Should calculate delay in delivery" time="0.001"/>
+        <testcase name="When the delivery is delayed in 2 days" classname="Scenario: Should calculate delay in delivery" time="0.0"/>
+        <testcase name="Then the delivery will be in 31/08/2020" classname="Scenario: Should calculate delay in delivery" time="0.0">
+          <failure>
+            <expected>31/08/2020</expected>
+            <actual>01/10/2020</actual>org.junit.ComparisonFailure: expected:&lt;[31/08]/2020&gt; but was:&lt;[01/10]/2020&gt;&#13;
+	at org.junit.Assert.assertEquals(Assert.java:115)&#13;
+	at org.junit.Assert.assertEquals(Assert.java:144)&#13;
+	at Automation.the_delivery_will_be_in(Automation.java:53)&#13;
+	at ✽.Then the delivery will be in 31/08/2020(cucumber.feature:16)&#13;
+&#13;
+</failure>
+        </testcase>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testrun>
