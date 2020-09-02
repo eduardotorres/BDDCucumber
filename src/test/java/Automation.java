@@ -5,6 +5,7 @@ import java.util.Date;
 
 import org.junit.Assert;
 
+import cucumber.api.Transform;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -28,13 +29,10 @@ public class Automation {
 
 	Date delivery = new Date();
 
-	@Given("^that the deadline is (\\d+)/(\\d+)/(\\d+)$")
-	public void that_the_deadline_is(int day, int month, int year) throws Throwable {
-		Calendar cal = Calendar.getInstance();
-		cal.set(Calendar.DAY_OF_MONTH, day);
-		cal.set(Calendar.MONTH, month - 1);
-		cal.set(Calendar.YEAR, year);
-		delivery = cal.getTime();
+	@Given("^that the deadline is (.*)$")
+	public void that_the_deadline_is(@Transform(DateConverter.class) Date date) throws Throwable {
+		delivery = date;
+		System.out.println(delivery);
 	}
 
 	@When("^the delivery is delayed in (\\d+) (day|days|month|months)$")
@@ -50,7 +48,7 @@ public class Automation {
 		delivery = cal.getTime();
 	}
 
-	@Then("^the delivery will be in (\\d{2}\\/\\d{2}\\/\\d{4})$")
+	@Then("^the delivery will be in (.*)$")
 	public void the_delivery_will_be_in(String date) throws Throwable {
 		
 			DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
@@ -63,8 +61,9 @@ public class Automation {
 
 	}
 
-	@Given("^that the value of the ticket it is R\\$ (\\d+)\\.(\\d+)$")
-	public void thatTheValueOfTheTicketItIsR$(int arg1, int arg2) throws Throwable {
+	@Given("^that the value of the ticket it is R\\$ (.*)$")
+	public void thatTheValueOfTheTicketItIsR$(Double value) throws Throwable {
+		System.out.println(value);
 
 	}
 

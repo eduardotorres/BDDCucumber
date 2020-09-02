@@ -24,25 +24,25 @@ Then the delivery will be in 29/10/2020
 Scenario: Should create generals steps to this sequence
 
 Given that the ticket it is AF345
-Given that the value of the ticket it is R$ 230.00
-Given that the name of the passenger is "Fulano da Silva"
-Given that the phone number is 9999-9999
+And that the value of the ticket it is R$ 230.00
+And that the name of the passenger is "Fulano da Silva"
+And that the phone number is 9999-9999
 When create the steps
 Then the test will pass
 
 Scenario: Should reuse the previous steps
  
 Given that the ticket it is AB167
-Given that the special ticket it is AB167
-Given that the value of the ticket it is R$ 1120.23
-Given that the name of the passenger is "Cicrano de Oliveira"
-Given that the phone number is 9888-8888
+And that the special ticket it is AB167
+And that the value of the ticket it is R$ 1120.23
+And that the name of the passenger is "Cicrano de Oliveira"
+And that the phone number is 9888-8888
 
 Scenario: Should deny all the previous steps
 
 Given that the ticket it is CD123
-Given that the ticket it is AG1234
-Given that the value of the ticket it is R$ 1.1345.56
-Given that the name of the passenger is "Beltrano Souza Matos de Alcântara Azevedo"
-Given that the phone number is 1234-5678
-Given that the phone number is 999-2223 
+And that the ticket it is AG1234
+And that the value of the ticket it is R$ 1.1345.56
+And that the name of the passenger is "Beltrano Souza Matos de Alcântara Azevedo"
+And that the phone number is 1234-5678
+And that the phone number is 999-2223 
